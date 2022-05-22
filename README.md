@@ -1,12 +1,13 @@
-# nestjs-prisma-multi-database
+# nestjs-prisma-multi-database using mysql:8
 
 # 🚀 Javascript full-stack 🚀
 
 https://github.com/coding-to-music/nestjs-prisma-multi-database
 
-https://nestjs-prisma-multi-database.vercel.app (not set up)
-
-https://nestjs-prisma-multi-database.vercel.app/api/auth (not set up)
+```java
+  console.log('serving http://localhost:3000/blogs using schema2');
+  console.log('serving http://localhost:3000/users using schema1');
+```
 
 By Sagar Lama
 
