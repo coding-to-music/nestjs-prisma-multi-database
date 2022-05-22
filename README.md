@@ -48,9 +48,9 @@ vercel --prod --confirm
 # Setup
 
 ```bash
-git clone https://github.com/sagarPakhrin/prisma-multidatabase-demo.git
+git clone https://github.com/coding-to-music/nestjs-prisma-multi-database.git
 
-cd prisma-multidatabase-demo
+cd nestjs-prisma-multi-database
 
 cp .env.example .env
 
@@ -58,8 +58,105 @@ npm i
 
 docker-compose up -d
 
+npm run migrate
+
+npm run schema2:migrate
+
 npm run start:dev
 
+```
+
+## Migrate the user schema to the new databases - user on schema.prisma
+
+```java
+npm run migrate
+```
+
+Output
+
+```java
+> nestjs-prisma-multi-database@0.0.1 migrate
+> npx prisma migrate dev
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": MySQL database "prisma" at "localhost:3306"
+
+Applying migration `20220311180626_initial_migration`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20220311180626_initial_migration/
+    └─ migration.sql
+
+Your database is now in sync with your schema.
+
+✔ Generated Prisma Client (3.14.0 | library) to ./node_modules/@prisma/client in 141ms
+```
+
+## Migrate the blog schema to the new databases - blog on schema2.prisma
+
+```java
+npm run schema2:migrate
+```
+
+Output
+
+```java
+> nestjs-prisma-multi-database@0.0.1 schema2:migrate
+> npx prisma migrate dev --schema ./prisma2/schema.prisma
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma2/schema.prisma
+Datasource "db": MySQL database "prisma2" at "localhost:3306"
+
+Applying migration `20220312181356_initial_migration`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20220312181356_initial_migration/
+    └─ migration.sql
+
+Your database is now in sync with your schema.
+
+✔ Generated Prisma Client (3.14.0 | library) to ./node_modules/@internal/prisma/client in 92ms
+```
+
+```java
+npm run start:dev
+```
+
+Output
+
+```java
+[Nest] 4549  - 05/22/2022, 8:51:32 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 4549  - 05/22/2022, 8:51:32 AM     LOG [InstanceLoader] AppModule dependencies initialized +58ms
+[Nest] 4549  - 05/22/2022, 8:51:32 AM     LOG [RoutesResolver] AppController {/}: +9ms
+[Nest] 4549  - 05/22/2022, 8:51:32 AM     LOG [RouterExplorer] Mapped {/users, GET} route +4ms
+[Nest] 4549  - 05/22/2022, 8:51:32 AM     LOG [RouterExplorer] Mapped {/blogs, GET} route +0ms
+[Nest] 4549  - 05/22/2022, 8:51:33 AM     LOG [NestApplication] Nest application successfully started +274ms
+```
+
+```
+http://localhost:3000/users
+```
+
+Output
+
+```java
+[]
+```
+
+```java
+http://localhost:3000/blogs
+```
+
+Output
+
+```java
+[]
 ```
 
 # Multiple Database connections in Prisma
