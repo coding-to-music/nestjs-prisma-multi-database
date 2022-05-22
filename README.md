@@ -4,9 +4,9 @@
 
 https://github.com/coding-to-music/nestjs-prisma-multi-database
 
-https://nestjs-prisma-multi-database.vercel.app
+https://nestjs-prisma-multi-database.vercel.app (not set up)
 
-https://nestjs-prisma-multi-database.vercel.app/api/auth
+https://nestjs-prisma-multi-database.vercel.app/api/auth (not set up)
 
 By Sagar Lama
 
@@ -35,6 +35,11 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:coding-to-music/nestjs-prisma-multi-database.git
 git push -u origin main
+```
+
+Not deployed on Vercel yet
+
+```java
 vercel --prod --confirm
 ```
 
