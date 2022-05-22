@@ -65,6 +65,9 @@ npm run schema2:migrate
 
 npm run start:dev
 
+  console.log('serving http://localhost:3000/blogs using schema2');
+
+  console.log('serving http://localhost:3000/users using schema1');
 ```
 
 ## Migrate the user schema to the new databases - user on schema.prisma
