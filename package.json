@@ -29,7 +29,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migrate": "npx prisma migrate dev",
     "schema2:migrate": "npx prisma migrate dev --schema ./prisma2/schema.prisma",
-    "deploy": "git add . && git commit -m Build && git push && vercel --prod"
+    "deploy": "git add . && git commit -m Build && git push",
+    "deploy:vercel": "git add . && git commit -m Build && git push && vercel --prod"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
