@@ -20,10 +20,13 @@ https://github.com/sagarPakhrin/prisma-multidatabase-demo
 ## Environment Values
 
 ```java
-DATABASE_URL: Copy this value directly from your .env file
-GITHUB_ID: Set this to the Client ID of the GitHub OAuth app you just created
-GITHUB_SECRET: Set this to the Client Secret of the GitHub OAuth app you just created
-NEXTAUTH_URL: Set this to the Authorization Callback URL of the GitHub OAuth app you just created
+MYSQL_ROOT_PASSWORD=prisma
+MYSQL_DATABASE=prisma
+MYSQL_USER=prisma
+MYSQL_PASSWORD=prisma
+DATABASE_URL=mysql://prisma:prisma@localhost:3306/prisma
+BLOG_DATABASE_URL=mysql://prisma:prisma@localhost:3306/prisma2
+SHADOW_DATABASE_URL=mysql://prisma:prisma@localhost:3306/prisma-shadow
 ```
 
 ## GitHub
